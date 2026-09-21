@@ -1,0 +1,30 @@
+CHAMPIONS AMIGOS V7 — RECUPERAÇÃO DE SENHA + CENTRAL DE NOTIFICAÇÕES
+
+Base: v6work-3.zip (versão estável confirmada pelo usuário).
+
+NOVO:
+- Central de notificações no ADM, separada do conteúdo do campeonato.
+- Contador de notificações não lidas.
+- Abrir notificação, marcar como lida e excluir.
+- Solicitação de recuperação de senha vinculada ao participante.
+- ADM pode abrir a notificação e redefinir a senha diretamente.
+- Após redefinir, a solicitação fica resolvida e deixa de ser pendência.
+- Na página de inscrição, no modo "Já tenho cadastro", há também "Esqueci minha senha".
+
+PRESERVADO:
+- Inscrições por link.
+- Limite e contagem de vagas.
+- Reativação das inscrições.
+- Convites/notificações de campeonato.
+- Geração de confrontos e demais fluxos da V6.
+
+IMPORTANTE:
+- Este pacote NÃO contém server/data/database.json. Preserve o database.json da sua V6.
+- Pare o backend antigo antes de iniciar o novo para evitar que a porta 4000 continue usando uma versão antiga.
+- Backend health agora informa a versão 7.0.0-password-notifications.
+
+TESTES REALIZADOS:
+- node --check server/src/server.js: OK
+- Babel parser JSX em client/src/main.jsx: OK
+- POST /api/auth/forgot-player com participante existente: OK
+- criação da notificação com userId/status: OK
